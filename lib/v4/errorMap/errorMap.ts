@@ -49,7 +49,7 @@ function parseInvalidUnionIssue(
       .map((subIssue) =>
         errorMap({
           ...subIssue,
-          path: issue.path.concat(subIssue.path),
+          path: (issue.path ?? []).concat(subIssue.path),
         })
       )
       .join(options.issueSeparator)
